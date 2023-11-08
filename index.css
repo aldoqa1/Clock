@@ -1,0 +1,191 @@
+:root{
+    --background : rgb(255, 255, 255);
+    --needle: rgb(0, 0, 0);
+    --primaryColor: rgb(0, 0, 0);
+    --secundaryColor: rgb(170, 25, 25);
+    --day : rgb(201, 13, 13);
+
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body{
+    transition: all 1s ease;
+}
+
+body.darkactive{
+    --background : rgb(46, 45, 45);
+    --background-secundary : rgb(73, 99, 95) ;
+    --primaryColor: rgb(255, 255, 255);
+    --secundaryColor: rgb(170, 25, 25);
+    --day : rgb(242, 188, 188);
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+}
+
+
+body{
+    font-size: 1.6rem;
+    margin: 0rem;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.clock{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(248, 248, 248);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 4px 0px black;
+    margin: 40px;
+}
+
+.hours{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+}
+
+p{
+    font-size: 17px;
+}
+
+.needle{
+    position: absolute;
+    height: 100px;
+    width: 2px;
+    transform-origin: 50% 0%;
+    top: calc(50%) ;
+    left: calc(50%);
+    transition: all 0.4s ease;
+}
+
+.minute{
+    background-color: var(--needle);
+    transform: rotate(180deg);
+    height: 70px;
+}
+
+.hour{
+    background-color: var(--needle);
+    transform: rotate(180deg);
+    height: 50px;
+}
+
+.hours p{
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second{
+    background-color: var(--secundaryColor);
+    transform: rotate(180deg);
+}
+
+.circle{
+    border-radius: 50%;
+    height: 6px;
+    width: 6px;
+    position: absolute;
+    background-color: var(--secundaryColor);
+    transform-origin: 50% 50%;
+    top: calc(50% - 3px) ;
+    left: calc(50% - 2px);
+}
+
+.hour1{
+    transform: rotate(90deg);
+}
+.hour1 p{
+    transform: rotate(270deg);
+}
+
+.hour2{
+    transform: rotate(120deg);
+}
+.hour2 p{
+    transform: rotate(240deg);
+}
+
+.hour3{
+    transform: rotate(150deg);
+}
+.hour3 p{
+    transform: rotate(210deg);
+}
+
+.hour5{
+    transform: rotate(210deg);
+}
+.hour5 p{
+    transform: rotate(150deg);
+}
+
+.hour6{
+    transform: rotate(240deg);
+}
+.hour6 p{
+    transform: rotate(120deg);
+}
+
+#darkmode{
+    transition: all 0.4s ease-in-out;
+    background-color: var(--primaryColor);
+    color: var(--background);
+    width: fit-content;
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+    font-size: 15px;
+    font-weight: bold;
+    outline: transparent;
+}
+
+#darkmode:active{
+    transform: scale(94%);
+}
+
+.time{
+    margin: auto;
+}
+.time p{
+    font-size: 30px;
+    text-align: center;
+    color: var(--day);
+}
+
+.time .AM-PM{
+    font-size: 40px;
+    margin: 0rem;
+    color: var(--primaryColor);
+}
+
